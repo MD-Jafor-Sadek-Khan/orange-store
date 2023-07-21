@@ -203,7 +203,36 @@
         </div>
       </section>
 
-    
+   <!-- Bags -->
+<section id="bags" class="my-5">
+  <div class="container text-center mt-5 py-5">
+    <h3>Bags</h3>
+    <hr class="mx-auto">
+    <p>Here you can check out our amazing bags</p>
+  </div>
+  <div class="row mx-auto container-fluid">
+
+    <?php include('server/get_bags.php'); ?>
+
+    <?php while ($row = $bags->fetch_assoc()) { ?>
+      <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" />
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+        <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+        <a href="<?php echo "single_product.php?product_id=" . $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+      </div>
+    <?php } ?>
+
+  </div>
+</section>
+
  
 
 
