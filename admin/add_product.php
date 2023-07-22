@@ -46,14 +46,15 @@
 
 
                 <div class="form-group mt-2">
-                    <label>Category</label>
-                    <select  class="form-select" required name="category">
-                        <option value="bags">Bags</option>
-                        <option value="shoes">Shoes</option>
-                        <option value="watches">Watches</option>
-                        <option value="coats">Coats</option>
-                    </select>
-                </div>
+    <label>Category</label>
+    <select class="form-select" required name="category">
+        <option value="bags">Bags</option>
+        <option value="shoes">Shoes</option>
+        <option value="watches">Watches</option>
+        <option value="coats">Coats</option>
+        <option value="new">New</option> <!-- Add this option for "New" -->
+    </select>
+</div>
 
 
                 <div class="form-group mt-2">

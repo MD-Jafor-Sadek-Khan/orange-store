@@ -117,7 +117,7 @@ if(isset($_POST['search'])){
 
 <div class="d-flex flex-lg-row flex-md-column">
   <!--Search-->
-  <section id="search" class="my-5 py-5 ms-2 bg-black text-white shop-search-body">
+  <section id="search" class=" my-5 py-5 ms-2 bg-black text-white shop-search-body d-none d-lg-block">
     <div class="container mt-5 py-5">
       <p class="fs-4-5">Search Products</p>
       <hr>
@@ -161,26 +161,29 @@ if(isset($_POST['search'])){
            </div>
          </div>
 
+<!-- slider  -->
+        
+      <div class="row mx-auto container mt-5">
+        <div class="col-lg-12 col-md-12 col-sm-12">
 
-         <div class="row mx-auto container mt-5">
-           <div class="col-lg-12 col-md-12 col-sm-12">
+          
+          <div class="d-flex justify-content-between align-items-baseline"><p>Price:</p> 
+            <!-- <span id="sliderValue"><?php echo (isset($price)) ? $price : "100"; ?></span> -->
+            <input type="number" class="form-control ms-3 w-75 d-inline" id="priceInput" name="price" value="<?php echo (isset($price)) ? $price : "100"; ?>" min="1" max="1000">
+</div>
+          <input type="range" class="form-range w-100" name="price" value="<?php echo (isset($price)) ? $price : "100"; ?>" min="1" max="10000" id="customRange2">
+          <div class="w-100 d-flex flex-lg-row flex-md-column justify-content-between align-items-baseline">
+            <span class="d-lg-inline d-none">$1</span>
+            <span class="d-lg-inline d-none">$10000</span>
+          </div>
+        </div>
+      </div>
 
-               <p>Price</p>
-               <input type="range" class="form-range w-50" name="price" value="<?php if(isset($price)){echo $price;}else{ echo "100";} ?>" min="1" max="1000" id="customRange2">
-               <div class="w-50 d-flex flex-lg-row flex-md-column justify-content-between align-items-baseline">
-                 <span class="d-lg-inline d-none">1</span>
-                 <span class="d-lg-inline d-none">1000</span>
-               </div>
-            </div>
-          </div>    
+      <div class="form-group my-3 mx-3">
+        <input type="submit" name="search" value="Search" class="btn shop-buy-btn align-self-center">
+      </div>
 
-
-          <div class="form-group my-3 mx-3">
-            <input type="submit" name="search" value="Search" class="btn shop-buy-btn align-self-center">
-          </div> 
-
-               </div>
-        <form>
+    </form>
 
   </section>
 
@@ -207,7 +210,8 @@ if(isset($_POST['search'])){
      <?php  while($row = $products->fetch_assoc()) { ?>
 
       <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>"/>
+      <a href="<?php echo "single_product.php?product_id=".$row['product_id'];?>"><img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>"/></a>
+        
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -261,8 +265,29 @@ if(isset($_POST['search'])){
 </div>
   
 
+<script>
+  const slider = document.getElementById('customRange2');
+  const sliderValueElement = document.getElementById('sliderValue');
+  const priceInput = document.getElementById('priceInput');
 
+  // Update the slider value element and the input value with the initial value on page load
+  // sliderValueElement.textContent = slider.value;
+  priceInput.value = slider.value;
 
+  // Update the slider value element and the input value whenever the slider value changes
+  slider.addEventListener('input', function() {
+    const value = this.value;
+    // sliderValueElement.textContent = value;
+    priceInput.value = value;
+  });
+
+  // Update the slider value element and the slider value whenever the input value changes
+  priceInput.addEventListener('input', function() {
+    const value = this.value;
+    // sliderValueElement.textContent = value;
+    slider.value = value;
+  });
+</script>
 
 
 

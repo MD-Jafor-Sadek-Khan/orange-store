@@ -26,36 +26,44 @@
         </div>
       </section>
 
-      <!--New-->
-      <section id="new" class="w-100">
-        <div class="row p-0 m-0">
-          <!--One-->
-          <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="assets/imgs/1.jpeg"/>
-            <div class="details">
-              <h2>Extreamely Awesome Shoes</h2>
-              <a href="shop.php"><button class="text-uppercase">Shop Now</button></a> 
-            </div>
-          </div>
-          <!--Two-->
-          <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="assets/imgs/2.jpeg"/>
-            <div class="details">
-              <h2>Awesome Jacket</h2>
-              <a href="shop.php"><button class="text-uppercase">Shop Now</button></a> 
-            </div>
-          </div>
+     
 
-          <!--Three-->
-          <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="assets/imgs/3.jpeg"/>
-            <div class="details">
-              <h2>50% OFF Watches</h2>
-              <a href="shop.php"><button class="text-uppercase">Shop Now</button></a> 
-            </div>
+<!-- New Section -->
+<section id="new" class="w-100">
+  <div class="row p-0 m-0">
+    <?php
+    // Include the file to fetch "New" products
+    include('server/get_new_products.php');
+
+    // Check if there are "New" products
+    if ($new_products !== null) {
+      while ($row = $new_products->fetch_assoc()) {
+        // Display the "New" product card
+        ?>
+        
+        <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+          <a href="<?php echo "single_product.php?product_id=". $row['product_id'];?>">
+            <img class="img-fluid" src="assets/imgs/<?php echo $row['product_image']; ?>"/>
+          </a>
+          <div class="details">
+            <h2><?php echo $row['product_name']; ?></h2>
+            <a href="<?php echo "single_product.php?product_id=". $row['product_id'];?>"><button class="text-uppercase">Shop Now</button></a> 
           </div>
         </div>
-      </section>
+        <?php
+      }
+    } else {
+      // Display a message when there are no "New" products
+      ?>
+      <div class="container text-center mt-5 py-5">
+        <p>No "New" products available at the moment.</p>
+      </div>
+      <?php
+    }
+    ?>
+  </div>
+</section>
+
 
 
 

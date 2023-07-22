@@ -24,7 +24,7 @@ if( isset($_POST['order_pay_btn']) ){
             <h2 class="form-weight-bold">Payment</h2>
             <hr class="mx-auto">
         </div>
-        <div class="mx-auto container text-center">
+        <div class=" d-flex flex-column justify-content-center align-items-center">
            
 
 
@@ -47,7 +47,7 @@ if( isset($_POST['order_pay_btn']) ){
 
                 <!-- <input class="btn btn-primary" type="submit" value="Pay Now"/> -->
                    <!-- Set up a container element for the button -->
-                    <div  id="paypal-button-container"></div>
+                    <div id="paypal-button-container"></div>
             
         
             
