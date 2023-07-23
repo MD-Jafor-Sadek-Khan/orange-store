@@ -169,7 +169,7 @@ if(isset($_POST['search'])){
           
           <div class="d-flex justify-content-between align-items-baseline"><p>Price:</p> 
             <!-- <span id="sliderValue"><?php echo (isset($price)) ? $price : "100"; ?></span> -->
-            <input type="number" class="form-control ms-3 w-75 d-inline" id="priceInput" name="price" value="<?php echo (isset($price)) ? $price : "100"; ?>" min="1" max="1000">
+            <input type="number" class="form-control ms-3 w-75 d-inline" id="priceInput" name="price" value="<?php echo (isset($price)) ? $price : "100"; ?>" min="1" max="10000">
 </div>
           <input type="range" class="form-range w-100" name="price" value="<?php echo (isset($price)) ? $price : "100"; ?>" min="1" max="10000" id="customRange2">
           <div class="w-100 d-flex flex-lg-row flex-md-column justify-content-between align-items-baseline">
