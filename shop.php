@@ -118,7 +118,7 @@ if(isset($_POST['search'])){
 <div class="d-flex flex-lg-row flex-md-column">
   <!--Search-->
   <section id="search" class=" my-5 py-5 ms-2 bg-black text-white shop-search-body d-none d-lg-block">
-    <div class="container mt-5 py-5">
+    <div class="container py-5">
       <p class="fs-4-5">Search Products</p>
       <hr>
     </div>
@@ -198,7 +198,7 @@ if(isset($_POST['search'])){
   
   
   <!--Shop-->
-  <section id="shop" class="my-5 py-5">
+  <section id="shop" class="mt-1 py-5">
     <div class="container mt-5 py-5">
       <h3>Our Products</h3>
       <hr>

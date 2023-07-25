@@ -30,15 +30,17 @@ session_start();
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
     <div class="container">
-        <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-start justify-content-between">
+            <div class="d-flex align-items-start align-items-md-center justify-content-start gap-md-0 gap-5 flex-md-row flex-column">
             <div class="d-flex align-items-center">
                <a href="index.php" class="d-flex justify-content-between align-items-end text-decoration-none"> <img class="logo" src="assets/imgs/logo.jpeg" />
                 <h1 class="brand brand-name">Orange</h1> </a>
             </div>
             <form class="d-flex" action="search.php" method="GET">
-                <input class="form-control me-2 border border-black" type="search" name="q" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2 border border-black border-opacity-25" type="search" name="q" placeholder="Search" aria-label="Search">
                 <button class="btn shop-buy-btn" type="submit">Search</button>
             </form>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

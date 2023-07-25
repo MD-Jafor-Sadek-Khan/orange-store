@@ -9,9 +9,9 @@
       <!--Home-->
       <section id="home">
         <div class="container">
-          <h5>NEW ARRIVALS</h5>
+          <h1>NEW ARRIVALS</h1>
           <h1><span>Best Prices</span> This Season</h1>
-          <p>Eshop offers the best products for the most affordable prices</p>
+          <p><span style="color:coral; font-size: 18px; font-weight:700;">Orange</span> Offers the Best <span style="font-weight: 700;color:black;">Products</span> for the Most Affordable <span style="font-weight: 700; color:black;">Price</span></p>
          <a href="shop.php"><button>Shop Now</button></a> 
         </div>
       </section>
